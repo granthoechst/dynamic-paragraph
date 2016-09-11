@@ -1,17 +1,17 @@
 import math
 import sys
 
-buffy_text = open('buffy.txt', 'r')
-
-if (len(sys.argv) != 2):
-	print("Usage: python buffy.py [LINE CHARACTER LIMIT]")
+if (len(sys.argv) != 3):
+	print("Usage: python paragraph.py [INPUT FILE] [LINE CHARACTER LIMIT]")
 	exit()
 
-M = int(sys.argv[1])
+input_text = open(sys.argv[1], 'r')
+
+M = int(sys.argv[2])
 
 words = []
 
-for line in buffy_text:
+for line in input_text:
 	for word in line.split():
 		words.append(word)
 n = len(words)
@@ -60,7 +60,6 @@ f = build_dyna_array(words)
 g = dynamic_recursion(n, words, f)
 
 print("")
-# print(breaks)
 
 final_breaks = []
 final_breaks.append(breaks[n - 1])
@@ -69,11 +68,7 @@ while(sum(final_breaks) < (n - 1)):
 	if(x == 0):
 		break
 	final_breaks.append(x)
-	# print(sum(final_breaks))
 final_breaks.append(n - sum(final_breaks))
-
-# print(final_breaks)
-# print(sum(final_breaks))
 
 
 for i in range(0, len(final_breaks)):
