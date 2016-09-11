@@ -4,14 +4,11 @@ This code uses a dynamic programming algorithm to quickly and efficiently format
 total amount of white space at the ends of the lines. This "penalty" is the difference between the number of characters on a line
 and the character limit specified by the user. No line will ever exceed the character limit.
 
-To run the code, download the files into a directory (paragraph.py and input.txt), and run:
+To run the code, download the files into a directory and run:
 
-	python paragraph.py [CHARACTER LIMIT (INT)]
+	python paragraph.py [INPUT FILE (.txt)] [CHARACTER LIMIT (INT)]
 
-This will print to the terminal an aesthetically formatted paragraph, and will also print out the total penalty across all lines.
-
-To alter the text being formatted, simply alter "input.txt" (that text file was hardcoded in for the purpose of the original assignment).
-
+This will print to the terminal an aesthetically formatted paragraph, and will also print out the total penalty across all lines. You can use any input text file you choose, but I've included a sample here for you as well.
 
 
 The code works by using a dynamic lookup table to determine the best way to pack words onto a given line whereby by the sum of
