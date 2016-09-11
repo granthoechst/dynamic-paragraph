@@ -2,13 +2,14 @@
 
 This code uses a dynamic programming algorithm to quickly and efficiently format a paragraph of text such that it minimizes the
 total amount of white space at the ends of the lines. This "penalty" is the difference between the number of characters on a line
-and the character limit specified by the user. No line will ever exceed the character limit.
+and the character limit specified by the user. No line will ever exceed the character limit, and any extra space on the last line 
+is not included in the penalty count.
 
 To run the code, download the files into a directory and run:
 
 	python paragraph.py [INPUT FILE (.txt)] [CHARACTER LIMIT (INT)]
 
-This will print to the terminal an aesthetically formatted paragraph, and will also print out the total penalty across all lines. You can use any input text file you choose, but I've included a sample here for you as well.
+This will print to the terminal an aesthetically formatted paragraph, and will also print out the total penalty across all lines. You can use any input text file you choose, but I've included a sample here for you as well (a personal favorite, Robin Williams's monologue from Good Will Hunting).
 
 
 The code works by using a dynamic lookup table to determine the best way to pack words onto a given line whereby by the sum of
